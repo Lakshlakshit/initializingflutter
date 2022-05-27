@@ -64,15 +64,27 @@ class _RandomWordsState extends State<RandomWords> {
             alreadySaved ? Icons.favorite : Icons.favorite_border,
             color: alreadySaved ? Colors.red : null,
             semanticLabel: alreadySaved ? 'Remove from saved' : 'Save',
-          ), 
-          onTap: () {          // NEW from here ...
-    setState(() {
-      if (alreadySaved) {
-        _saved.remove(_suggestions[index]);
-      } else {
-        _saved.add(_suggestions[index]);
-      }
-    });                // to here.
+          ),
+          onTap: () {
+            // NEW from here ...
+            setState(() {
+              if (alreadySaved) {
+                _saved.remove(_suggestions[index]);
+              } else {
+                _saved.add(_suggestions[index]);
+              }
+            });
+            // NEW from here ...
+            setState(() {
+              if (alreadySaved) {
+                _saved.remove(_suggestions[index]);
+              } else {
+                _saved.add(_suggestions[index]);
+              }
+            });
+          },
+        );
+        // to here.
         // #enddocregion listTile
       },
       // #enddocregion itemBuilder
